@@ -98,7 +98,7 @@ class TodoPage extends Component {
   // Delete
 
   handleDelete = async (id) => {
-    const response = await fetch(`http://localhost:3001/api/todo/delete/${id}`, {
+    const response = await fetch(`${this.todoUrl}/delete/${id}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
