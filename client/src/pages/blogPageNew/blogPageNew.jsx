@@ -25,6 +25,7 @@ export default class BlogPageNew extends Component {
     const formDataCopy = { ...this.state.formData };
 
     try {
+      console.log('formDataCopy', formDataCopy);
       const resp = await fetch(`${this.blogUrl}/new`, {
         method: 'POST',
         headers: {
