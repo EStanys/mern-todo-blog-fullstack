@@ -1,0 +1,58 @@
+.navbar{
+  background-color: #333;
+  color: snow;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem ;
+  align-items: center; 
+  height: 70px;
+ 
+}
+
+.nav__logo{
+  list-style: none;
+}
+
+.nav__logo a{
+  color: #FB817D;
+  text-decoration: none;
+  font-size: 1.5rem;
+} 
+
+.nav__links{
+color: snow;
+text-decoration: none;
+}
+
+.nav-blog__link{
+  /* position: relative; */
+}
+
+.nav__link {
+color: snow;
+list-style: none;
+display: inline-block ;
+ /* position: relative; */
+}
+
+.nav__link a{
+  color: snow;
+  text-decoration: none;
+  padding: 0 0.8rem;
+  line-height: 70px;
+  display: inline-block ;
+  height: 70px;
+ 
+}
+
+.nav__link a:hover{
+  color: #FB817D;
+}
+
+
+.todos-sublinks__link{
+display: block;
+line-height: 1.5;
+color: snow;
+text-decoration: none;
+}

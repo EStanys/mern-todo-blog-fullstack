@@ -1,0 +1,15 @@
+.hero {
+  max-height: 200px;
+  width: 100%;
+  object-fit:cover;
+  object-position: 50% 42%;
+  
+  
+}
+
+.hero-date {
+  margin-top: -2em;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+  color: rgb(201, 201, 201);
+}

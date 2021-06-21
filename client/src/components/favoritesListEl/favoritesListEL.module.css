@@ -1,0 +1,35 @@
+.add-input {
+    margin-right: 15px;
+    color: rgb(6, 190, 6);
+    cursor: pointer;
+}
+
+.err-duplicate {
+  background-color: white;
+  position: absolute;
+   animation: enter 1s ease-in-out; 
+   color: red;
+   width: 140%;
+   
+}
+
+@keyframes enter {
+  0% {left: -40%}
+  100% {left: 1.5rem}
+  120% {left: 1.5rem}
+}
+
+.scs-duplicate {
+  background-color: white;
+  position: absolute;
+   animation: enter1 1s ease-in-out; 
+   color: green;
+   width: 140%;
+   
+}
+
+@keyframes enter1 {
+  0% {left: -40%}
+  100% {left: 1.5rem}
+  120% {left: 1.5rem}
+}

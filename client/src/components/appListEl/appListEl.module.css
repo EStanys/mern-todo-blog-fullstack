@@ -1,0 +1,44 @@
+.app-todo-el > *{
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.app-todo-el i {
+    cursor: pointer;
+}
+.app-todo-el i:nth-child(4){
+    color: #ffd000
+}
+.app-todo-el i:nth-child(3){
+    color: #12411a
+}
+
+.app-todo-el i:last-child{
+    float: right;
+    color: #310301
+}
+
+.app-todo-el span {
+    margin-right: 1.5rem;
+}
+
+.crossed {
+    text-decoration:line-through ;
+}
+
+.crossedGreen {
+    background-color: green;
+}
+
+.app-todo-el input{
+    border: none;
+    color: rgb(39, 39, 39);
+    font-size: 0.9rem;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     padding: 5px;
+     background-color: rgba(255, 255, 255, 0);
+}
+
+.app-todo-el input:focus{
+    outline: none;
+}

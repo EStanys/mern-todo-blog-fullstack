@@ -1,0 +1,15 @@
+.todo-list {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    list-style: none;
+    padding: 13px 10px 25px 10px;
+    background-color: rgba(255, 255, 255, 0.522);
+    border-radius: 15px;
+}
+
+.todo-list li {
+    border-bottom:  1px solid rgba(0, 0, 0, 0.316);
+    line-height: 1.5;
+    padding: 5px 0;
+    
+}

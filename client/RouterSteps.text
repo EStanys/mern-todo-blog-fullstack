@@ -1,0 +1,126 @@
+1. npm i react-router-dom
+
+2. importuojamBrowserRouter i index.js:
+Brow
+serRouter - paduoda narsykles narsymo istorija
+
+import { BrowserRouter } from 'react-router-dom';
+
+2.1 apjuosiam pagrindini faila :
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+3.importuojam Route is rout-router i app.jsx - leis nurodi=yti kelius i komponentus 
+
+import { Route } from 'react-router'
+
+4. susidedam puslapiu i Route komponenta
+
+return (
+      <div className={classes.App}>
+        <NavBar />
+        <div className={classes.container}>
+            <Route path="/todos" component={TodoPage}></Route>
+            <Route path="/about" component={AboutPage}></Route>
+            <Route path="/contacts" component={ContactsPage}></Route>
+            <Route path="/" component={HomePage}></Route>
+        </div>
+      </div>
+    );
+  }
+
+  4.1 Kad rodytu visus puslapiu tiksliai pagal nuoroda, o neuzkrautu kelis vienu metu / ir /todos pvz reikia importuoti switch arba naudoti exact: 
+
+switch:
+
+import { Route, Switch } from 'react-router'
+
+  return (
+      <div className={classes.App}>
+        <NavBar />
+        <div className={classes.container}>
+          <Switch>
+            <Route path="/todos" component={TodoPage}></Route>
+            <Route path="/about" component={AboutPage}></Route>
+            <Route path="/contacts" component={ContactsPage}></Route>
+            <Route path="/" component={HomePage}></Route>
+          </Switch>
+
+          {/* <Route path="/" exact component={HomePage}></Route> */}
+        </div>
+      </div>
+    );
+  }
+
+  exact:
+
+  return (
+      <div className={classes.App}>
+        <NavBar />
+        <div className={classes.container}>
+          
+            <Route path="/todos" component={TodoPage}></Route>
+            <Route path="/about" component={AboutPage}></Route>
+            <Route path="/contacts" component={ContactsPage}></Route>
+            <Route path="/" exact component={HomePage}></Route> 
+        </div>
+      </div>
+    );
+  }
+
+
+  5. Kad puslapis nepersikrautu paspaudus ant linko:
+
+  5.1. i navbar isiimportuojam Link: 
+
+  import { Link } from 'react-router-dom'
+
+  5.2 pasikeiciam visus <a></a> i <Link><Link/>> ir href i to:
+
+  return (
+    <nav className={classes.navbar}>
+      <Link className={classes['nav__logo']} to="/">
+        ReactApp
+      </Link>
+      <div className={classes['nav__links']}>
+        <Link className={classes['nav__link']} to="/">
+          Home
+        </Link>
+        <Link className={classes['nav__link']} to="/todos">
+          To-do
+        </Link>
+        <Link className={classes['nav__link']} to="/about">
+          About
+        </Link>
+        <Link className={classes['nav__link']} to="/contacts">
+          Contacts
+        </Link>
+      </div>
+    </nav>
+  );
+
+  6. redirect
+
+  jei ivestas neegzistuojanti linkas nuredirectinam kitur: 
+
+  import { Route, Switch, Redirect } from 'react-router'
+
+  <Switch>
+            <Route path="/todos/:id" component={SingleTodo}></Route>
+            <Route path="/todos" component={TodoPage}></Route>
+            <Route path="/about" component={AboutPage}></Route>
+            <Route path="/contacts" component={ContactsPage}></Route>
+            <Route path="/" exact component={HomePage}></Route>
+            <Route path="/not-found" exact component={NotFound}></Route>
+            <Redirect to="/not-found"></Redirect>
+          </Switch>
+
+6.1 redirectinam is vieno puslapio i kita, jei norim kad suvedus nuvestu vartotoja kazkur kitur:
+
+<Redirect from="/buble" to="/todos"></Redirect>
