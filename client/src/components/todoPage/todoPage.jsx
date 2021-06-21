@@ -325,7 +325,7 @@ class TodoPage extends Component {
           {this.state.inputIsEmpty && <p className={classes['input-empty-err']}>*required field</p>}
         </div>
       </div>
-    );
+    )
   }
 }
 
