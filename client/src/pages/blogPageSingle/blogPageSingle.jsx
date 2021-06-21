@@ -6,7 +6,7 @@ import Button from '../../components/appButton/appButton'
 export default class BlogPageSingle extends Component {
   constructor() {
     super();
-    this.blogUrl = 'http://localhost:3001/api/blog';
+    this.blogUrl = 'https://blog-todo-mern-full-stack.herokuapp.com/api/blog';
     this.state = {
       singleBlog: {},
     };

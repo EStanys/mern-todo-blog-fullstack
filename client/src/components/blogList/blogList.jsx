@@ -5,7 +5,7 @@ import BlogListEl from '../blogListEl/blogListEl';
 class BlogList extends Component {
   constructor() {
     super();
-    this.blogUrl = 'http://localhost:3001/api/blog';
+    this.blogUrl = 'https://blog-todo-mern-full-stack.herokuapp.com/api/blog';
     this.state = {
       allPosts: [],
     };
