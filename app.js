@@ -30,19 +30,19 @@ if (process.env.NODE_ENV === 'production') {
 
   // visas srautas nukreipiams per produkcijos sukurta index.html
   app.get('*', (req, res) => {
-    res.sendFile(path.join('index.html', { root: rootBuild }))
+    res.sendFile(path.join({ root: rootBuild }, 'index.html' ))
   })
 }
 
-// 404 case - kai vartojas ivede psl kurio nera
-app.use((req, res) => res.status(404).send('OOPs Page not found'));
+
 
 mongoose.connect(process.env.MONGO_CONN_STRING, { useNewUrlParser: true, useUnifiedTopology: true }).then((result) => {
   console.log('Connected to db');
   app.listen(PORT);
 });
 
-
+// 404 case - kai vartojas ivede psl kurio nera
+app.use((req, res) => res.status(404).send('OOPs Page not found'));
 
 
 

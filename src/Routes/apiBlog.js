@@ -3,13 +3,15 @@ const router = express.Router();
 
 const BlogPost = require('../models/blog');
 
-router.post('/new', (req, res) => {
+router.post('/new', async (req, res) => {
   const newBlogPost = new BlogPost(req.body);
+try{ 
+  const blog = await newBlogPost.save()
+  res.json({ msg: 'add success' })
 
-  newBlogPost
-    .save()
-    .then((result) => res.json({ msg: 'add success' }))
-    .catch((err) => res.status(400).json(err));
+} catch (err) {
+  res.status(400).json(err)
+}
 });
 
 router.get('/', (req, res) => {
