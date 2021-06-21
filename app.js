@@ -1,7 +1,5 @@
 require('dotenv').config();  //envirnment variables
 
-
-
 const express = require('express');
 const app = express();
 const path = require('path')
@@ -16,6 +14,7 @@ const blogRoutes = require('./src/Routes/apiBlog');
 const cors = require('cors');
 
 const PORT = process.env.PORT || 3001; // jei bus heroku nustatytas portas mes ji imsim is env
+app.use(cors());
 
 app.use('/api/todo', todoRoutes);
 app.use('/api/todo/favorites', TodoFavorites);
@@ -37,7 +36,6 @@ mongoose.connect(process.env.MONGO_CONN_STRING, { useNewUrlParser: true, useUnif
   app.listen(PORT);
 });
 
-app.use(cors());
 
 // for req.body to work
 app.use(express.json());
