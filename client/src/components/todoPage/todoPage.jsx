@@ -12,7 +12,8 @@ class TodoPage extends Component {
     super(props);
     this.handleCheckUncheck = this.handleCheckUncheck.bind(this);
     // this.todoUrl = 'http://localhost:3001/api/todo';
-    this.todoUrl = `https://${process.env.HEROKU_HOST || 'localhost'}:${process.env.PORT || 3001}/api/todos`;
+    // this.todoUrl = `https://${process.env.HEROKU_HOST || 'localhost'}:${process.env.PORT || 3001}/api/todos`;
+    this.todoUrl = `https://${process.env.HEROKU_HOST}:3001/api/todos`;
     this.favoritesUrl = 'http://localhost:3001/api/todo/favorites';
   }
 
