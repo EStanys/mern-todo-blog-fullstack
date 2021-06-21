@@ -14,7 +14,7 @@ class TodoPage extends Component {
     // this.todoUrl = 'http://localhost:3001/api/todo';
     // this.todoUrl = `https://${process.env.HEROKU_HOST || 'localhost'}:${process.env.PORT || 3001}/api/todos`;
     this.todoUrl = `https://blog-todo-mern-full-stack.herokuapp.com/api/todo`;
-    this.favoritesUrl = 'http://localhost:3001/api/todo/favorites';
+    this.favoritesUrl = 'https://blog-todo-mern-full-stack.herokuapp.com/api/todo/favorites';
   }
 
   state = {
