@@ -19,6 +19,9 @@ app.use(cors());
 app.use('/api/todo', todoRoutes);
 app.use('/api/todo/favorites', TodoFavorites);
 app.use('/api/blog', blogRoutes);
+// for req.body to work
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 const rootBuild = path.join(__dirname, 'client', 'build')
 // pasitikrinti ar musu aplinka yra production
@@ -31,17 +34,16 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
+// 404 case - kai vartojas ivede psl kurio nera
+app.use((req, res) => res.status(404).send('OOPs Page not found'));
+
 mongoose.connect(process.env.MONGO_CONN_STRING, { useNewUrlParser: true, useUnifiedTopology: true }).then((result) => {
   console.log('Connected to db');
   app.listen(PORT);
 });
 
 
-// for req.body to work
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 
 
 
-// 404 case - kai vartojas ivede psl kurio nera
-app.use((req, res) => res.status(404).send('OOPs Page not found'));
+

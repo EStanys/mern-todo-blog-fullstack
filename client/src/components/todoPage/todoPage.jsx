@@ -66,6 +66,7 @@ class TodoPage extends Component {
       return;
     }
     try {
+      console.log('inputvalue', inputValue);
       const response = await fetch(`${this.todoUrl}/new`, {
         method: 'POST',
         headers: {
@@ -79,11 +80,13 @@ class TodoPage extends Component {
           isInFavorites: false,
         }),
       });
+
       const data = await response.json();
 
       this.setState({ inputIsEmpty: false });
 
       if (data.msg === 'add success') {
+        console.log('praejo');
         this.updateState();
       }
       if (data.msg === 'add failed') {
