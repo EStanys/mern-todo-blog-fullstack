@@ -114,7 +114,7 @@ class TodoPage extends Component {
   // Check / uncheck
 
   handleCheckUncheck = async (id, isDone) => {
-    const response = await fetch(this.todoUrl + `/editDone/${id}`, {
+    const response = await fetch(`${this.todoUrl}/editDone/${id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -131,7 +131,7 @@ class TodoPage extends Component {
   // Edit
 
   handleEdit = async (id, isEditMode) => {
-    const response = await fetch(this.todoUrl + `/edit/${id}`, {
+    const response = await fetch(`${this.todoUrl}/edit/${id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -146,7 +146,7 @@ class TodoPage extends Component {
   };
 
   handleEditSave = async (id, isEditMode, e) => {
-    const response = await fetch(this.todoUrl + `/editSave/${id}`, {
+    const response = await fetch(`${this.todoUrl}/editSave/${id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -166,7 +166,7 @@ class TodoPage extends Component {
   // Reset
 
   resetTodoList = async () => {
-    const response = await fetch(this.todoUrl + '/reset');
+    const response = await fetch(`${this.todoUrl}/reset`);
     const data = await response.json();
 
     if (data.msg === 'reset success') {
