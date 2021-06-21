@@ -5,12 +5,14 @@ const BlogPost = require('../models/blog');
 
 router.post('/new', async (req, res) => {
   const newBlogPost = new BlogPost(req.body);
+  console.log('req.body',req.body);
 try{ 
   const blog = await newBlogPost.save()
   res.json({ msg: 'add success' })
 
 } catch (err) {
-  res.status(400).json(err)
+  // res.status(400).json(err)
+   res.json({ msg: 'klaida' });
 }
 });
 
