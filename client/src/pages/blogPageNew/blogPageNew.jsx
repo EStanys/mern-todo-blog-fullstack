@@ -34,7 +34,7 @@ export default class BlogPageNew extends Component {
         body: JSON.stringify(formDataCopy),
       });
       const data = await resp.json();
-      data.msg === 'add success' && this.setState({ formData: { title: '', author: '', postText: '' } });
+      // data.msg === 'add success' && this.setState({ formData: { title: '', author: '', postText: '' } });
 
       console.log('front msg:', data.msg);
     } catch (err) {
