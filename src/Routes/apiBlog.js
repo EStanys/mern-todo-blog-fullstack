@@ -4,7 +4,7 @@ const router = express.Router();
 const BlogPost = require('../models/blog');
 
 router.post('/new', async (req, res) => {
-  const newBlogPost = new BlogPost(req.body);
+  const newBlogPost = new BlogPost({title: req.body.title, author: req.body.author, postText: req.body.postText});
   console.log('req.body',req.body);
 try{ 
   const blog = await newBlogPost.save()
